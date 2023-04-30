@@ -72,7 +72,7 @@ impl M5 {
 
     pub fn set_angle_snapping(&self, active: bool) {
         let value: u8 = if active { 0x00 } else { 0x01 };
-        let buf = [0x51, 0x31, 0x03, 0x00, value];
+        let buf = [0x51, 0x31, 0x04, 0x00, value];
         self.device.write(&buf).unwrap();
         println!(
             "Turned {} angle snapping.",
